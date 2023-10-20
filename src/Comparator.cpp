@@ -37,7 +37,8 @@ double Comparator::CompareFiles(const fs::path& path1, const fs::path& path2) {
 
   int max_size = std::max(content1.size(), content2.size());
   return (1 - (static_cast<double>(LevensteinDistance(content1, content2)) /
-         max_size)) * 100;
+               max_size)) *
+         100;
 }
 
 size_t Comparator::LevensteinDistance(const std::string& str1,
@@ -135,12 +136,12 @@ void Comparator::PrintOnlyInDir2() {
   }
 }
 
-std::vector<std::pair<fs::directory_entry, fs::directory_entry>>
+const std::vector<std::pair<fs::directory_entry, fs::directory_entry>>&
 Comparator::GetEqualFiles() const {
   return equal_files_;
 }
 
-std::vector<std::tuple<fs::directory_entry, fs::directory_entry, double>>
+const std::vector<std::tuple<fs::directory_entry, fs::directory_entry, double>>&
 Comparator::GetSimilarFiles() const {
   return similar_files_;
 }

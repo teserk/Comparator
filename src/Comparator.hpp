@@ -25,11 +25,12 @@ class Comparator {
   void PrintInConsole();
 
   // Получить одинаковые файлы
-  std::vector<std::pair<fs::directory_entry, fs::directory_entry>>
+  const std::vector<std::pair<fs::directory_entry, fs::directory_entry>>&
   GetEqualFiles() const;
 
   // Получить одинаковые файлы
-  std::vector<std::tuple<fs::directory_entry, fs::directory_entry, double>>
+  const std::vector<
+      std::tuple<fs::directory_entry, fs::directory_entry, double>>&
   GetSimilarFiles() const;
 
   // Сравнивает два файла и возвращает процент сходства
