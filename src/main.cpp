@@ -9,7 +9,8 @@ namespace fs = std::filesystem;
 int main(int argc, char** argv) {
   if (argc < 3 || (std::stod(argv[3]) < 0 || std::stod(argv[3]) > 100.0)) {
     std::cerr << "USAGE: ./comparator first_directory second_directory "
-                 "similarity_threshold(from 0 to 100)";
+                 "similarity_threshold(from 0 to 100)"
+              << std::endl;
     return 1;
   }
   fs::path dir1 = argv[1];
